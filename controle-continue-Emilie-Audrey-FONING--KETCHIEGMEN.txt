@@ -1,0 +1,87 @@
+Contrôle Continu – GitHub.
+
+Vous répondrez à chacune des questions sur ce fichier texte. 
+Pour chacune d'entre elles, vous effectuerez la tache demandée et vous écrirez la ou les commandes nécessaires sous la question. 
+
+1. A l'aide du terminal, créez un dossier "CC_nom_prenom" dans lequel vous initialiserez un repository git.
+Faire:
+git init
+
+QUESTIONS DE COURS.
+2. Qu'est ce que Git et à quoi sert-il ? 
+Git est un logiciel de versionnage qui permet de gérer les différentes versions d’un projet qu’il soit un projet de programmation ou un projet no-code.
+3. Comparez Git et GitHub.
+La différence entre Git et GitHub est que Git est un outil qui gère les versions du projet en local et que GitHub est une plateforme qui permet de gérer les repository d’un projet sur le cloud ou en distanciel.
+4. Donnez les deux espaces dans lesquels peuvent se trouver les fichiers avant de réaliser un commit.
+Les fichiers se trouvent dans le “working directory” lorsque l’on commence le projet et une fois que l’on fait un “git add .” de ces derniers, ils passent dans le “staging area”. 
+QUESTIONS PRATIQUES. 
+
+5. Après avoir répondu aux questions de cours, ajoutez ce fichier dans votre repo et faites votre premier commit. 
+git add .
+git commit -m "First commit du code"
+6. Créez une branche feature et placez vous dessus. Donnez les 3 méthodes de création de branche. 
+Pour créer une branche, il faut utiliser l’une des commandes suivantes:
+git branch feature
+git checkout -b feature
+git switch -c feature
+7. Ajoutez un fichier texte film.txt à votre dossier et écrivez votre film préféré à l'intérieur. 
+echo “war room” > film.txt
+8. Ajoutez un fichier texte serie.txt à votre dossier et écrivez votre série préférée à l'intérieur. 
+echo “suits” > serie.txt
+9. Faites un commit en ajoutant uniquement le fichier film.txt à votre commit. 
+Faut déjà faire le git add du fichier film.txt avec la commande suivante:
+git add film.txt
+Puis on pourra réaliser le commit avec la commande
+git commit -m “ajout du fichier film.txt”
+10. Ajoutez un fichier citation.txt dans lequel vous écrirez votre citation préférée. 
+echo “C'est à force de forger que l'on devient forgeron” > citation.txt
+11. Faites un commit qui ajoute toutes les modifications. 
+Avant de faire le commit, il faut add tout les changements avec la commande:
+git add .
+Puis entrer la commande du commit suivante:
+git commit -m “ changement des fichiers nouvellement créés”
+12. Sur une nouvelle branche add_images, créez un fichier "ignore.txt" et ignorez le. Vous ferez ensuite un capture d'écran qui montre que le 
+fichier est bien ignoré et vous ajouterez cette capture dans un dossier "images". Vous pourrez ensuite commit les changements.
+Pour créer la branche add_images, on entre la commande:
+git switch -c add_images
+On crée le fichier ignore.txt:
+echo “” > ignore.txt
+Pour ignorer le fichier ignore.txt, il faut creer créer le fichier .ignore en suivant les instructions suivante:
+echo "ignore.txt" > .gitignore
+git add .gitignore
+git commit -m "Ajout de ignore.txt à .gitignore"
+
+13. Faites une capture d'écran de vos branches et ajoutez la au dossier image et faites un commit.
+Il faut d’abord faire un add avant de faire le commit avec les commandes suivantes:
+git add .
+git commit -m “ Commit de l’ensemble des fichiers”
+
+14. Mergez vos branches feature et add_images dans master. 
+Pour merguez mes deux branches, il faut:
+git checkout master
+git merge add_images feature
+15. Faites une capture d'écran de l'historique de vos commit sur master, ajoutez la au dossier image et faites un commit. 
+git log
+16. Créez un repo en ligne dans lequel vous pousserez votre dossier. 
+ git branch -M master
+ git remote add origin https://github.com/EmilieFoning237/CC-Emilie-Audrey-FONING-KETCHIEGMEN.git
+ git push -u origin master
+-
+17. Sur GitHub, créez un nouveau fichier origin.txt sur la branche master. Puis tirez le dans votre repo local.
+Pour le tirer dans le repo local, il suffit d’entrer les commandes suivante:
+git pull origin master
+18. Créez une nouvelle branche feedback, ajoutez un fichier feedback.txt dans lequel vous écrirez votre feedback sur le cours
+(vous ne serez ni avantagé ni pénalisé selon le feedback). Créez ensuite une Pull Request et mergez la dans master depuis GitHub.
+git checkout -b feedback
+echo "Le cours s'est très bien déroulé dans l'ensemble. Nous avons passé de très bon moments dans l'apprentissage. Merci à vous et à bientôt sur d'autre thématique." > feedback.txt
+git add feedback.txt
+git commit -m "Ajout de feedback sur le cours"
+git push origin feedback
+
+
+Lien de votre repo GitHub : https://github.com/EmilieFoning237/CC-Emilie-Audrey-FONING-KETCHIEGMEN/tree/master
+
+Vous laisserez votre repo distant en public et écrirez le lien dans ce fichier que vous rendez sur classroom. 
+
+
+
